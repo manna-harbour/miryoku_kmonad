@@ -1,0 +1,65 @@
+;; Copyright 2021 Manna Harbour
+;; github.com/manna-harbour/miryoku
+       
+       
+       
+       
+(defcfg
+  input (device-file "keyboard")
+  output (uinput-sink "Miryoku KMonad output")
+  fallthrough false
+)
+(defsrc
+  2 3 4 5 6 8 9 0 - =
+  q w e r t i o p [ ]
+  caps a s d f k l ; ' ent
+                x c v , . /
+)
+(deflayer BASE
+q	w	f	p	b	j	l	u	y	'
+(tap-hold-next-release 200 a met)	(tap-hold-next-release 200 r alt)	(tap-hold-next-release 200 s ctl)	(tap-hold-next-release 200 t sft)	g	m	(tap-hold-next-release 200 n sft)	(tap-hold-next-release 200 e ctl)	(tap-hold-next-release 200 i alt)	(tap-hold-next-release 200 o met)
+(tap-hold-next-release 200 z (layer-toggle BUTTON))	(tap-hold-next-release 200 x ralt)	c	d	v	k	h	,	(tap-hold-next-release 200 . ralt)	(tap-hold-next-release 200 / (layer-toggle BUTTON))
+(tap-hold-next-release 200 esc (layer-toggle MEDIA))	(tap-hold-next-release 200 spc (layer-toggle NAV))	(tap-hold-next-release 200 tab (layer-toggle MOUSE))	(tap-hold-next-release 200 ent (layer-toggle SYM))	(tap-hold-next-release 200 bspc (layer-toggle NUM))	(tap-hold-next-release 200 del (layer-toggle FUN))
+)
+(deflayer BUTTON
+undo	S-del	C-ins	S-ins	again	again	S-ins	C-ins	S-del	undo
+met	alt	ctl	sft	XX	XX	sft	ctl	alt	met
+undo	S-del	C-ins	S-ins	again	again	S-ins	C-ins	S-del	undo
+#(kp- kp5)	#(kp* kp5)	#(kp/ kp5)	#(kp/ kp5)	#(kp* kp5)	#(kp- kp5)
+)
+(deflayer NAV
+XX	XX	XX	XX	XX	again	S-ins	C-ins	S-del	undo
+met	alt	ctl	sft	XX	caps	left	down	up	right
+XX	ralt	XX	XX	XX	ins	home	pgdn	pgup	end
+XX	XX	XX	ent	bspc	del
+)
+(deflayer MOUSE
+XX	XX	XX	XX	XX	again	S-ins	C-ins	S-del	undo
+met	alt	ctl	sft	XX	XX	kp4	kp2	kp8	kp6
+XX	ralt	XX	XX	XX	XX	XX	XX	XX	XX
+XX	XX	XX	#(kp/ kp5)	#(kp* kp5)	#(kp- kp5)
+)
+(deflayer MEDIA
+XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+met	alt	ctl	sft	XX	XX	previoussong	vold	volu	nextsong
+XX	ralt	XX	XX	XX	XX	XX	XX	XX	XX
+XX	XX	XX	stopcd	playpause	mute
+)
+(deflayer NUM
+[	7	8	9	]	XX	XX	XX	XX	XX
+;	4	5	6	=	XX	sft	ctl	alt	met
+`	1	2	3	\\	XX	XX	XX	ralt	XX
+.	0	-	XX	XX	XX
+)
+(deflayer SYM
+{	&	*	\(	}	XX	XX	XX	XX	XX
+:	$	%	^	+	XX	sft	ctl	alt	met
+~	!	@	#	|	XX	XX	XX	ralt	XX
+\(	\)	\_	XX	XX	XX
+)
+(deflayer FUN
+f12	f7	f8	f9	sysrq	XX	XX	XX	XX	XX
+f11	f4	f5	f6	slck	XX	sft	ctl	alt	met
+f10	f1	f2	f3	pause	XX	XX	XX	ralt	XX
+comp	spc	tab	XX	XX	XX
+)

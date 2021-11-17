@@ -1,0 +1,10 @@
+name: 'Test'
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  test:
+    uses: manna-harbour/miryoku_kmonad/.github/workflows/main.yml@main
+    with:
+      mode: '["test"]'
