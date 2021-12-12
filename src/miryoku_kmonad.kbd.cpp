@@ -30,7 +30,7 @@
 #elif defined (MIRYOKU_MAPPING_LITE)
   q      w      e      r      t           y      u      i      o      p
   a      s      d      f      g           h      j      k      l      ;
-  z      x      c      v      v           n      m      ,      .      /
+  z      x      c      v      b           n      m      ,      .      /
   #if defined (MIRYOKU_LAYERS_FLIP)
   Missing255 Missing255 Missing255 Missing255 spc Missing255
   #else
