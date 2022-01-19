@@ -11,6 +11,12 @@ U_MT(q, met),      U_MT(s, alt),      U_MT(d, ctl),      U_MT(f, sft),      g,  
 U_LT(w, BUTTON),   U_MT(x, ralt),     c,                 v,                 b,                 n,                 U_COMM,            .,                 U_MT(/, ralt),     U_LT(U_QUOT, BUTTON), \
 U_NP,              U_NP,              U_LT(del, FUN),    U_LT(bspc, NUM),   U_LT(ent, SYM),    U_LT(tab, MOUSE),  U_LT(spc, NAV),    U_LT(esc, MEDIA),  U_NP,              U_NP
 
+#define MIRYOKU_ALTERNATIVES_BASE_BEAKL15_FLIP \
+q,                 h,                 o,                 u,                 x,                 g,                 c,                 r,                 f,                 z,                 \
+U_MT(y, met),      U_MT(i, alt),      U_MT(e, ctl),      U_MT(a, sft),      .,                 d,                 U_MT(s, sft),      U_MT(t, ctl),      U_MT(n, alt),      U_MT(b, met),      \
+U_LT(j, BUTTON),   U_MT(/, ralt),     U_COMM,            k,                 U_QUOT,            w,                 m,                 l,                 U_MT(p, ralt),     U_LT(v, BUTTON),   \
+U_NP,              U_NP,              U_LT(del, FUN),    U_LT(bspc, NUM),   U_LT(ent, SYM),    U_LT(tab, MOUSE),  U_LT(spc, NAV),    U_LT(esc, MEDIA),  U_NP,              U_NP
+
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAK_FLIP \
 q,                 w,                 f,                 p,                 g,                 j,                 l,                 u,                 y,                 U_QUOT,            \
 U_MT(a, met),      U_MT(r, alt),      U_MT(s, ctl),      U_MT(t, sft),      d,                 h,                 U_MT(n, sft),      U_MT(e, ctl),      U_MT(i, alt),      U_MT(o, met),      \
@@ -63,6 +69,12 @@ U_NP,              U_NP,              U_LT(del, FUN),    U_LT(bspc, NUM),   U_LT
 a,                 z,                 e,                 r,                 t,                 y,                 u,                 i,                 o,                 p,                 \
 U_MT(q, met),      U_MT(s, alt),      U_MT(d, ctl),      U_MT(f, sft),      g,                 h,                 U_MT(j, sft),      U_MT(k, ctl),      U_MT(l, alt),      U_MT(m, met),      \
 U_LT(w, BUTTON),   U_MT(x, ralt),     c,                 v,                 b,                 n,                 U_COMM,            .,                 U_MT(/, ralt),     U_LT(U_QUOT, BUTTON), \
+U_NP,              U_NP,              U_LT(esc, MEDIA),  U_LT(spc, NAV),    U_LT(tab, MOUSE),  U_LT(ent, SYM),    U_LT(bspc, NUM),   U_LT(del, FUN),    U_NP,              U_NP
+
+#define MIRYOKU_ALTERNATIVES_BASE_BEAKL15 \
+q,                 h,                 o,                 u,                 x,                 g,                 c,                 r,                 f,                 z,                 \
+U_MT(y, met),      U_MT(i, alt),      U_MT(e, ctl),      U_MT(a, sft),      .,                 d,                 U_MT(s, sft),      U_MT(t, ctl),      U_MT(n, alt),      U_MT(b, met),      \
+U_LT(j, BUTTON),   U_MT(/, ralt),     U_COMM,            k,                 U_QUOT,            w,                 m,                 l,                 U_MT(p, ralt),     U_LT(v, BUTTON),   \
 U_NP,              U_NP,              U_LT(esc, MEDIA),  U_LT(spc, NAV),    U_LT(tab, MOUSE),  U_LT(ent, SYM),    U_LT(bspc, NUM),   U_LT(del, FUN),    U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAK \
