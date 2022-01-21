@@ -115,6 +115,13 @@ As default but without the reverse column angle.
 This is a hybrid mapping keeping the traditional home positions.  Only the 3x10 alphas plus space as primary thumb key are mapped.  The remaining keys are the same as the native keyboard but with semicolon in place of quote.  This enables the selection of alternative alphas, and use of home row mods and the finger part of the Nav layer.  Other than with ~MIRYOKU_LAYERS=FLIP~, backspace, enter, delete, tab, and escape are also mapped as the corresponding thumb keys.
 
 
+*** Tap
+
+~MIRYOKU_MAPPING=TAP~
+
+Corresponds to the tap functions of the Miryoku Base layer with default layout options.  For use with remappable keyboards.
+
+
 ** Other Options
 
 
