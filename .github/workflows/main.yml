@@ -56,9 +56,7 @@ jobs:
           src='src'
           build="$src/build"
           rules="$src/custom_rules.mk"
-          echo -e '# Copyright 2021 Manna Harbour\n# https://github.com/manna-harbour/miryoku\n' > "$rules"
           config="$src/custom_config.h"
-          echo -e '// Copyright 2021 Manna Harbour\n// https://github.com/manna-harbour/miryoku\n\n#pragma once\n' > "$config"
           artifact_build_name='miryoku_kmonad'
           for option in "alphas=${{ matrix.alphas }}" "nav=${{ matrix.nav }}" "clipboard=${{ matrix.clipboard }}" "layers=${{ matrix.layers }}" "mapping=${{ matrix.mapping }}" "kmonad_os=${{ matrix.kmonad_os }}"
           do
