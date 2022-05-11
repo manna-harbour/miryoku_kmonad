@@ -29,7 +29,7 @@ First ~cd~ to the [[src]] directory then build with ~make~.  The generated confi
 To select [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]], [[#mapping][mapping]], and [[#other-options][other]] options, append them to the ~make~ command line.
 #+BEGIN_SRC sh :tangle no
 make # defaults
-make MIRYOKU_ALPHAS=QWERTY MIRYOKU_NAV=INVERTEDT MIRYOKU_CLIPBOARD=WIN MIRYOKU_LAYERS=FLIP MIRYOKU_MAPPING=LITE MIRYOKU_KMONAD_OS=WIN # custom
+make MIRYOKU_ALPHAS=QWERTY MIRYOKU_EXTRA=COLEMAKDH MIRYOKU_TAP=QWERTY MIRYOKU_NAV=INVERTEDT MIRYOKU_CLIPBOARD=WIN MIRYOKU_LAYERS=FLIP MIRYOKU_MAPPING=LITE MIRYOKU_KMONAD_OS=WIN # custom
 #+END_SRC
 
 

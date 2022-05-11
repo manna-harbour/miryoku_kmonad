@@ -5,6 +5,14 @@ ifneq ($(strip $(MIRYOKU_ALPHAS)),)
   OPT_DEFS += -DMIRYOKU_ALPHAS_$(MIRYOKU_ALPHAS)
 endif
 
+ifneq ($(strip $(MIRYOKU_EXTRA)),)
+  OPT_DEFS += -DMIRYOKU_EXTRA_$(MIRYOKU_EXTRA)
+endif
+
+ifneq ($(strip $(MIRYOKU_TAP)),)
+  OPT_DEFS += -DMIRYOKU_TAP_$(MIRYOKU_TAP)
+endif
+
 ifneq ($(strip $(MIRYOKU_NAV)),)
   OPT_DEFS += -DMIRYOKU_NAV_$(MIRYOKU_NAV)
 endif

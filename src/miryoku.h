@@ -43,6 +43,7 @@
 
 #define U_MT(TAP, HOLD) (tap-hold-next-release U_TAPPING_TERM TAP HOLD)
 #define U_LT(TAP, HOLD) (tap-hold-next-release U_TAPPING_TERM TAP (layer-toggle HOLD))
+#define U_DF(LAYER) (layer-switch LAYER)
 
 #define MIRYOKU_MAPPING_MAIN( \
   K00,      K01,      K02,      K03,      K04,      K05,      K06,      K07,      K08,      K09, \
