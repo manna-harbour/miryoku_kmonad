@@ -33,8 +33,8 @@ on:
         description: 'custom_rules.mk'
         required: false
         default: 'default'
-      config:
-        description: 'custom_config.h'
+      custom_config:
+        description: 'custom_custom_config.h'
         required: false
         default: 'default'
 jobs:
@@ -48,7 +48,7 @@ jobs:
       mapping: ${{ steps.process-inputs.outputs.mapping }}
       kmonad_os: ${{ steps.process-inputs.outputs.kmonad_os }}
       rules: ${{ steps.process-inputs.outputs.rules }}
-      config: ${{ steps.process-inputs.outputs.config }}
+      custom_config: ${{ steps.process-inputs.outputs.custom_config }}
     steps:
       - name: Process inputs
         id: process-inputs
@@ -65,7 +65,7 @@ jobs:
           set-output "mapping" "${{ github.event.inputs.mapping }}"
           set-output "kmonad_os" "${{ github.event.inputs.kmonad_os }}"
           set-output "rules" "${{ github.event.inputs.rules }}"
-          set-output "config" "${{ github.event.inputs.config }}"
+          set-output "custom_config" "${{ github.event.inputs.custom_config }}"
   build:
     uses: manna-harbour/miryoku_kmonad/.github/workflows/main.yml@main
     needs: process-inputs
@@ -78,4 +78,4 @@ jobs:
       mapping: ${{ needs.process-inputs.outputs.mapping }}
       kmonad_os: ${{ needs.process-inputs.outputs.kmonad_os }}
       rules: ${{ needs.process-inputs.outputs.rules }}
-      config: ${{ needs.process-inputs.outputs.config }}
+      custom_config: ${{ needs.process-inputs.outputs.custom_config }}

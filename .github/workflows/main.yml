@@ -28,7 +28,7 @@ on:
       rules:
         type: string
         default: '["default"]'
-      config:
+      custom_config:
         type: string
         default: '["default"]'
 jobs:
@@ -44,7 +44,7 @@ jobs:
         mapping: ${{ fromJSON(inputs.mapping) }}
         kmonad_os: ${{ fromJSON(inputs.kmonad_os) }}
         rules: ${{ fromJSON(inputs.rules) }}
-        config: ${{ fromJSON(inputs.config) }}
+        custom_config: ${{ fromJSON(inputs.custom_config) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -74,10 +74,10 @@ jobs:
             artifact_build_name="$artifact_build_name rules_"`echo "${{ matrix.rules }}" | md5sum | cut -d ' ' -f 1`
             echo "${{ matrix.rules }}" >> "$rules"
           fi
-          if [ -n "${{ matrix.config }}" -a "${{ matrix.config }}" != 'default' ]
+          if [ -n "${{ matrix.custom_config }}" -a "${{ matrix.custom_config }}" != 'default' ]
           then
-            artifact_build_name="$artifact_build_name config_"`echo "${{ matrix.config }}" | md5sum | cut -d ' ' -f 1`
-            echo "${{ matrix.config }}" >> "$config"
+            artifact_build_name="$artifact_build_name config_"`echo "${{ matrix.custom_config }}" | md5sum | cut -d ' ' -f 1`
+            echo "${{ matrix.custom_config }}" >> "$config"
           fi
           cp "$rules" "$config" "$artifacts_dir"
           artifact_build_name=`echo $artifact_build_name | tr ' ' '-'`
