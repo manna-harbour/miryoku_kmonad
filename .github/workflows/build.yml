@@ -3,6 +3,6 @@ on:
   - workflow_dispatch
 jobs:
   test:
-    uses: manna-harbour/miryoku_kmonad/.github/workflows/main.yml@main
+    uses: ./.github/workflows/main.yml
     with:
       mode: '["build"]'

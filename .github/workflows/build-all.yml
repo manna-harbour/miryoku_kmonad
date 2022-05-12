@@ -7,12 +7,44 @@ on:
 jobs:
   build:
     if: github.repository_owner == 'manna-harbour'
-    uses: manna-harbour/miryoku_kmonad/.github/workflows/main.yml@main
+    uses: ./.github/workflows/main.yml
     with:
       mode: '["build"]'
-      alphas: '["default","azerty","colemak","colemakdhk","dvorak","halmak","workman","qwerty","qwertz"]'
-      nav: '["default","vi","invertedt"]'
-      clipboard: '["default","fun","mac","win"]'
-      layers: '["default","flip"]'
-      mapping: '["default","noreverseangle","lite"]'
-      kmonad_os: '["default","mac","win"]'
+      alphas: '[
+        "default",
+        "azerty",
+        "beakl15",
+        "colemak",
+        "colemakdhk",
+        "dvorak",
+        "halmak",
+        "workman",
+        "qwerty",
+        "qwertz",
+        "workman"
+      ]'
+      nav: '[
+        "default",
+        "invertedt"
+        "vi"
+      ]'
+      clipboard: '[
+        "default",
+        "fun",
+        "mac",
+        "win"
+      ]'
+      layers: '[
+        "default",
+        "flip"
+      ]'
+      mapping: '[
+        "default",
+        "noreverseangle",
+        "lite"
+      ]'
+      kmonad_os: '[
+        "default",
+        "mac",
+        "win"
+      ]'

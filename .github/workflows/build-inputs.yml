@@ -67,7 +67,7 @@ jobs:
           set-output "rules" "${{ github.event.inputs.rules }}"
           set-output "custom_config" "${{ github.event.inputs.custom_config }}"
   build:
-    uses: manna-harbour/miryoku_kmonad/.github/workflows/main.yml@main
+    uses: ./.github/workflows/main.yml
     needs: process-inputs
     with:
       mode: '["build"]'
