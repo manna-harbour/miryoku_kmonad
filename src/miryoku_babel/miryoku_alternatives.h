@@ -283,31 +283,31 @@ U_NP,              U_NP,              U_NA,              U_NA,              U_NA
 U_NU,              U_NU,              kp8,               U_NU,              U_NU,              U_NA,              U_DF(BASE),        U_DF(EXTRA),       U_DF(TAP),         U_NA,              \
 U_NU,              kp4,               kp2,               kp6,               U_NU,              U_NA,              sft,               ctl,               alt,               met,               \
 U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_NA,              U_DF(MOUSE),       U_DF(SYM),         ralt,              U_NA,              \
-U_NP,              U_NP,              #(kp- kp5),        #(kp* kp5),        #(kp/ kp5),        U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+U_NP,              U_NP,              #(kp* kp5),        #(kp/ kp5),        #(kp- kp5),        U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE_FLIP \
 U_NU,              U_NU,              U_NU,              U_NU,              U_NU,              U_NA,              U_DF(BASE),        U_DF(EXTRA),       U_DF(TAP),         U_NA,              \
 kp4,               kp2,               kp8,               kp6,               U_NU,              U_NA,              sft,               ctl,               alt,               met,               \
 U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_NA,              U_DF(MOUSE),       U_DF(SYM),         ralt,              U_NA,              \
-U_NP,              U_NP,              #(kp- kp5),        #(kp* kp5),        #(kp/ kp5),        U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+U_NP,              U_NP,              #(kp* kp5),        #(kp/ kp5),        #(kp- kp5),        U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE_INVERTEDT \
 U_NA,              U_DF(TAP),         U_DF(EXTRA),       U_DF(BASE),        U_NA,              U_NU,              U_NU,              kp8,               U_NU,              U_NU,              \
 met,               alt,               ctl,               sft,               U_NA,              U_NU,              kp4,               kp2,               kp6,               U_NU,              \
 U_NA,              ralt,              U_DF(SYM),         U_DF(MOUSE),       U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              #(kp/ kp5),        #(kp* kp5),        #(kp- kp5),        U_NP,              U_NP
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              #(kp- kp5),        #(kp/ kp5),        #(kp* kp5),        U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE_VI \
 U_NA,              U_DF(TAP),         U_DF(EXTRA),       U_DF(BASE),        U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
 met,               alt,               ctl,               sft,               U_NA,              kp4,               kp2,               kp8,               kp6,               U_NU,              \
 U_NA,              ralt,              U_DF(SYM),         U_DF(MOUSE),       U_NA,              U_NU,              U_NU,              U_NU,              U_NU,              U_NU,              \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              #(kp/ kp5),        #(kp* kp5),        #(kp- kp5),        U_NP,              U_NP
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              #(kp- kp5),        #(kp/ kp5),        #(kp* kp5),        U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE \
 U_NA,              U_DF(TAP),         U_DF(EXTRA),       U_DF(BASE),        U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
 met,               alt,               ctl,               sft,               U_NA,              U_NU,              kp4,               kp2,               kp8,               kp6,               \
 U_NA,              ralt,              U_DF(SYM),         U_DF(MOUSE),       U_NA,              U_NU,              U_NU,              U_NU,              U_NU,              U_NU,              \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              #(kp/ kp5),        #(kp* kp5),        #(kp- kp5),        U_NP,              U_NP
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              #(kp- kp5),        #(kp/ kp5),        #(kp* kp5),        U_NP,              U_NP
 
 
 #define MIRYOKU_ALTERNATIVES_MEDIA_INVERTEDT_FLIP \
@@ -384,4 +384,4 @@ U_NP,              U_NP,              comp,              spc,               tab,
 U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
 met,               alt,               ctl,               sft,               U_NU,              U_NU,              sft,               ctl,               alt,               met,               \
 U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
-U_NP,              U_NP,              #(kp- kp5),        #(kp* kp5),        #(kp/ kp5),        #(kp/ kp5),        #(kp* kp5),        #(kp- kp5),        U_NP,              U_NP
+U_NP,              U_NP,              #(kp* kp5),        #(kp/ kp5),        #(kp- kp5),        #(kp- kp5),        #(kp/ kp5),        #(kp* kp5),        U_NP,              U_NP
