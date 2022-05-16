@@ -1,11 +1,12 @@
-// Copyright 2021 Manna Harbour
+// Copyright 2022 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
 #pragma once
 
 #include "custom_config.h"
 
-#include "miryoku_babel/miryoku_layer.h"
+#include "miryoku_babel/miryoku_layer_selection.h"
+#include "miryoku_babel/miryoku_layer_list.h"
 
 #define U_MACRO_VA_ARGS(MACRO, ...) MACRO(__VA_ARGS__)
 
@@ -54,7 +55,7 @@
   K00 U_TAB K01 U_TAB K02 U_TAB K03 U_TAB K04 U_TAB K05 U_TAB K06 U_TAB K07 U_TAB K08 U_TAB K09 U_LF \
   K10 U_TAB K11 U_TAB K12 U_TAB K13 U_TAB K14 U_TAB K15 U_TAB K16 U_TAB K17 U_TAB K18 U_TAB K19 U_LF \
   K20 U_TAB K21 U_TAB K22 U_TAB K23 U_TAB K24 U_TAB K25 U_TAB K26 U_TAB K27 U_TAB K28 U_TAB K29 U_LF \
-                      K32 U_TAB K33 U_TAB K34 U_TAB K35 U_TAB K36 U_TAB K37
+      U_TAB     U_TAB K32 U_TAB K33 U_TAB K34 U_TAB K35 U_TAB K36 U_TAB K37
 
 #if defined (MIRYOKU_MAPPING_LITE)
   #define MIRYOKU_MAPPING(...) MIRYOKU_MAPPING_MAIN(__VA_ARGS__) U_LF \

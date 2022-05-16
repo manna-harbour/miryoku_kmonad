@@ -4,6 +4,7 @@
        
        
        
+       
 (defcfg
   input (device-file "keyboard")
   output (uinput-sink "Miryoku KMonad output")
@@ -18,60 +19,61 @@
 (deflayer BASE
 q	w	f	p	b	j	l	u	y	'
 (tap-hold-next-release 200 a met)	(tap-hold-next-release 200 r alt)	(tap-hold-next-release 200 s ctl)	(tap-hold-next-release 200 t sft)	g	m	(tap-hold-next-release 200 n sft)	(tap-hold-next-release 200 e ctl)	(tap-hold-next-release 200 i alt)	(tap-hold-next-release 200 o met)
-(tap-hold-next-release 200 z (layer-toggle BUTTON))	(tap-hold-next-release 200 x ralt)	c	d	v	k	h	,	(tap-hold-next-release 200 . ralt)	(tap-hold-next-release 200 / (layer-toggle BUTTON))
-(tap-hold-next-release 200 esc (layer-toggle MEDIA))	(tap-hold-next-release 200 spc (layer-toggle NAV))	(tap-hold-next-release 200 tab (layer-toggle MOUSE))	(tap-hold-next-release 200 ent (layer-toggle SYM))	(tap-hold-next-release 200 bspc (layer-toggle NUM))	(tap-hold-next-release 200 del (layer-toggle FUN))
+(tap-hold-next-release 200 z (layer-toggle U_BUTTON))	(tap-hold-next-release 200 x ralt)	c	d	v	k	h	,	(tap-hold-next-release 200 . ralt)	(tap-hold-next-release 200 / (layer-toggle U_BUTTON))
+		(tap-hold-next-release 200 esc (layer-toggle U_MEDIA))	(tap-hold-next-release 200 spc (layer-toggle U_NAV))	(tap-hold-next-release 200 tab (layer-toggle U_MOUSE))	(tap-hold-next-release 200 ent (layer-toggle U_SYM))	(tap-hold-next-release 200 bspc (layer-toggle U_NUM))	(tap-hold-next-release 200 del (layer-toggle U_FUN))
 )
 (deflayer EXTRA
 q	w	e	r	t	y	u	i	o	p
 (tap-hold-next-release 200 a met)	(tap-hold-next-release 200 s alt)	(tap-hold-next-release 200 d ctl)	(tap-hold-next-release 200 f sft)	g	h	(tap-hold-next-release 200 j sft)	(tap-hold-next-release 200 k ctl)	(tap-hold-next-release 200 l alt)	(tap-hold-next-release 200 ' met)
-(tap-hold-next-release 200 z (layer-toggle BUTTON))	(tap-hold-next-release 200 x ralt)	c	v	b	n	m	,	(tap-hold-next-release 200 . ralt)	(tap-hold-next-release 200 / (layer-toggle BUTTON))
-(tap-hold-next-release 200 esc (layer-toggle MEDIA))	(tap-hold-next-release 200 spc (layer-toggle NAV))	(tap-hold-next-release 200 tab (layer-toggle MOUSE))	(tap-hold-next-release 200 ent (layer-toggle SYM))	(tap-hold-next-release 200 bspc (layer-toggle NUM))	(tap-hold-next-release 200 del (layer-toggle FUN))
+(tap-hold-next-release 200 z (layer-toggle U_BUTTON))	(tap-hold-next-release 200 x ralt)	c	v	b	n	m	,	(tap-hold-next-release 200 . ralt)	(tap-hold-next-release 200 / (layer-toggle U_BUTTON))
+		(tap-hold-next-release 200 esc (layer-toggle U_MEDIA))	(tap-hold-next-release 200 spc (layer-toggle U_NAV))	(tap-hold-next-release 200 tab (layer-toggle U_MOUSE))	(tap-hold-next-release 200 ent (layer-toggle U_SYM))	(tap-hold-next-release 200 bspc (layer-toggle U_NUM))	(tap-hold-next-release 200 del (layer-toggle U_FUN))
 )
 (deflayer TAP
 q	w	f	p	b	j	l	u	y	'
 a	r	s	t	g	m	n	e	i	o
 z	x	c	d	v	k	h	,	.	/
-esc	spc	tab	ent	bspc	del
+		esc	spc	tab	ent	bspc	del
 )
 (deflayer BUTTON
 undo	S-del	C-ins	S-ins	again	again	S-ins	C-ins	S-del	undo
 met	alt	ctl	sft	XX	XX	sft	ctl	alt	met
 undo	S-del	C-ins	S-ins	again	again	S-ins	C-ins	S-del	undo
-#(kp- kp5)	#(kp* kp5)	#(kp/ kp5)	#(kp/ kp5)	#(kp* kp5)	#(kp- kp5)
+		#(kp* kp5)	#(kp/ kp5)	#(kp- kp5)	#(kp- kp5)	#(kp/ kp5)	#(kp* kp5)
 )
 (deflayer NAV
-XX	(layer-switch TAP)	(layer-switch EXTRA)	(layer-switch BASE)	XX	again	S-ins	C-ins	S-del	undo
+XX	(layer-switch U_TAP)	(layer-switch U_EXTRA)	(layer-switch U_BASE)	XX	again	S-ins	C-ins	S-del	undo
 met	alt	ctl	sft	XX	caps	left	down	up	right
-XX	ralt	(layer-switch NUM)	(layer-switch NAV)	XX	ins	home	pgdn	pgup	end
-XX	XX	XX	ent	bspc	del
+XX	ralt	(layer-switch U_NUM)	(layer-switch U_NAV)	XX	ins	home	pgdn	pgup	end
+		XX	XX	XX	ent	bspc	del
 )
 (deflayer MOUSE
-XX	(layer-switch TAP)	(layer-switch EXTRA)	(layer-switch BASE)	XX	again	S-ins	C-ins	S-del	undo
+XX	(layer-switch U_TAP)	(layer-switch U_EXTRA)	(layer-switch U_BASE)	XX	again	S-ins	C-ins	S-del	undo
 met	alt	ctl	sft	XX	XX	kp4	kp2	kp8	kp6
-XX	ralt	(layer-switch SYM)	(layer-switch MOUSE)	XX	XX	XX	XX	XX	XX
-XX	XX	XX	#(kp/ kp5)	#(kp* kp5)	#(kp- kp5)
+XX	ralt	(layer-switch U_SYM)	(layer-switch U_MOUSE)	XX	XX	XX	XX	XX	XX
+		XX	XX	XX	#(kp- kp5)	#(kp/ kp5)	#(kp* kp5)
 )
 (deflayer MEDIA
-XX	(layer-switch TAP)	(layer-switch EXTRA)	(layer-switch BASE)	XX	XX	XX	XX	XX	XX
+XX	(layer-switch U_TAP)	(layer-switch U_EXTRA)	(layer-switch U_BASE)	XX	XX	XX	XX	XX	XX
 met	alt	ctl	sft	XX	XX	previoussong	vold	volu	nextsong
-XX	ralt	(layer-switch FUN)	(layer-switch MEDIA)	XX	XX	XX	XX	XX	XX
-XX	XX	XX	stopcd	playpause	mute
+XX	ralt	(layer-switch U_FUN)	(layer-switch U_MEDIA)	XX	XX	XX	XX	XX	XX
+		XX	XX	XX	stopcd	playpause	mute
 )
 (deflayer NUM
-[	7	8	9	]	XX	(layer-switch BASE)	(layer-switch EXTRA)	(layer-switch TAP)	XX
+[	7	8	9	]	XX	(layer-switch U_BASE)	(layer-switch U_EXTRA)	(layer-switch U_TAP)	XX
 ;	4	5	6	=	XX	sft	ctl	alt	met
-`	1	2	3	\\	XX	(layer-switch NUM)	(layer-switch NAV)	ralt	XX
-.	0	-	XX	XX	XX
+`	1	2	3	\\	XX	(layer-switch U_NUM)	(layer-switch U_NAV)	ralt	XX
+		.	0	-	XX	XX	XX
 )
 (deflayer SYM
-{	&	*	\(	}	XX	(layer-switch BASE)	(layer-switch EXTRA)	(layer-switch TAP)	XX
+{	&	*	\(	}	XX	(layer-switch U_BASE)	(layer-switch U_EXTRA)	(layer-switch U_TAP)	XX
 :	$	%	^	+	XX	sft	ctl	alt	met
-~	!	@	#	|	XX	(layer-switch SYM)	(layer-switch MOUSE)	ralt	XX
-\(	\)	\_	XX	XX	XX
+~	!	@	#	|	XX	(layer-switch U_SYM)	(layer-switch U_MOUSE)	ralt	XX
+		\(	\)	\_	XX	XX	XX
 )
 (deflayer FUN
-f12	f7	f8	f9	sysrq	XX	(layer-switch BASE)	(layer-switch EXTRA)	(layer-switch TAP)	XX
+f12	f7	f8	f9	sysrq	XX	(layer-switch U_BASE)	(layer-switch U_EXTRA)	(layer-switch U_TAP)	XX
 f11	f4	f5	f6	slck	XX	sft	ctl	alt	met
-f10	f1	f2	f3	pause	XX	(layer-switch FUN)	(layer-switch MEDIA)	ralt	XX
-comp	spc	tab	XX	XX	XX
+f10	f1	f2	f3	pause	XX	(layer-switch U_FUN)	(layer-switch U_MEDIA)	ralt	XX
+		comp	spc	tab	XX	XX	XX
 )
+

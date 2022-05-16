@@ -16,8 +16,8 @@ build/%.kbd: %.kbd.cpp FORCE
 	  -e 's/U_LPRN/\\(/g' \
 	  -e 's/U_RPRN/\\)/g' \
 	  -e 's/U_PIPE/|/g' \
-	  -e 's/ U_LF /\n/g' \
-	  -e 's/ U_TAB /\t/g' \
+	  -e 's/[ ]*U_LF[ ]*/\n/g' \
+	  -e 's/[ ]*U_TAB[ ]*/\t/g' \
 	 > $@
 
 FORCE: ;
