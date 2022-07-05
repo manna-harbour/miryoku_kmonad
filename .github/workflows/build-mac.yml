@@ -1,0 +1,52 @@
+name: 'Build-Mac'
+on:
+  - workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    with:
+      mode: '["build"]'
+      alphas: '["default"]'
+      extra: '["colemakdh"]'
+      nav: '["vi"]'
+      clipboard: '["mac"]'
+      layers: '["default"]'
+      mapping: '["default"]'
+      kmonad_os: '["mac"]'
+      rules: '["default"]'
+      custom_config: '["default"]'
+
+
+## Copyright 2021 Manna Harbour
+## https://github.com/manna-harbour/miryoku
+#
+#name: 'Main'
+#on:
+#  workflow_call:
+#    inputs:
+#      mode:
+#        type: string
+#      alphas:
+#        type: string
+#        default: '["default"]'
+#      nav:
+#        type: string
+#        default: '["default"]'
+#      clipboard:
+#        type: string
+#        default: '["default"]'
+#      layers:
+#        type: string
+#        default: '["default"]'
+#      mapping:
+#        type: string
+#        default: '["default"]'
+#      kmonad_os:
+#        type: string
+#        default: '["default"]'
+#      rules:
+#        type: string
+#        default: '["default"]'
+#      custom_config:
+#        type: string
+#        default: '["default"]'
