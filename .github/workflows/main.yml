@@ -83,6 +83,8 @@ jobs:
           echo "::set-output name=artifact-build-name::$artifact_build_name"
           echo "::set-output name=src::src"
           echo "::set-output name=build::$build"
+          echo "::set-output name=kmonad-file-pattern::kmonad-*-linux"
+          echo "::set-output name=kmonad-dir::.github/workflows/bin"
       - name: Remove Build
         if: ${{ matrix.mode == 'test' }}
         run: |
@@ -106,6 +108,24 @@ jobs:
         run: |
           git status -s "${{ steps.inputs.outputs.build }}"
           git diff --exit-code "${{ steps.inputs.outputs.build }}"
+      - name: Download kmonad release
+        if: ${{ matrix.mode == 'test' }}
+        uses: robinraju/release-downloader@v1.4
+        with:
+          repository: "kmonad/kmonad"
+          # latest: true
+          tag: "0.4.1"
+          fileName: "${{ steps.inputs.outputs.kmonad-file-pattern }}"
+          out-file-path: "${{ steps.inputs.outputs.kmonad-dir }}"
+      - name: Dry run
+        if: ${{ matrix.mode == 'test' }}
+        run: |
+          kmonad=`echo ${{ steps.inputs.outputs.kmonad-dir }}/${{ steps.inputs.outputs.kmonad-file-pattern }}`
+          chmod u+x "$kmonad"
+          for f in "${{ steps.inputs.outputs.build }}"/*.kbd
+          do
+            "$kmonad" -d "$f"
+          done
       - name: Archive Artifacts
         if: ${{ matrix.mode == 'build' }}
         uses: actions/upload-artifact@v2
