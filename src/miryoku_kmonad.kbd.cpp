@@ -24,7 +24,7 @@
 (defsrc
 #if defined (MIRYOKU_MAPPING_NOREVERSEANGLE)
   grv    1      2      3      4           8      9      0      -      =
-  tap    q      w      e      r           i      o      p      [      ]
+  tab    q      w      e      r           i      o      p      [      ]
   caps   a      s      d      f           k      l      ;      U_QUOT ent
                 z      x      c           ,      .      /
 #elif defined (MIRYOKU_MAPPING_LITE)
