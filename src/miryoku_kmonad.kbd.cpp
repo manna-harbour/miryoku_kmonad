@@ -42,6 +42,11 @@
   a      r      s      t      g           m      n      e      i      o
   z      x      c      d      v           k      h      ,      .      /
                 esc    spc    tab         ent    bspc   del
+#elif defined (MIRYOKU_MAPPING_KINESIS_ADVANTAGE)
+  q      w      e      r      t           y      u      i      o      p
+  a      s      d      f      g           h      j      k      l      ;
+  z      x      c      v      b           n      m      ,      .      /
+                bspc   del    end         pgdn   ent    spc
 #else
   2      3      4      5      6           8      9      0      -      =
   q      w      e      r      t           i      o      p      [      ]

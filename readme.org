@@ -24,7 +24,7 @@ Generate a personalised KMonad config file.
 
 Requires ~make~, ~sh~, ~cpp~, and ~sed~.
 
-First ~cd~ to the [[src]] directory then build with ~make~.  The generated config file is [[src/build/miryoku.kbd]].
+First ~cd~ to the [[src]] directory then build with ~make~.  The generated config file is [[src/build/miryoku_kmonad.kbd]].
 
 To select [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]], [[#mapping][mapping]], and [[#other-options][other]] options, append them to the ~make~ command line.
 #+BEGIN_SRC sh :tangle no
@@ -120,6 +120,13 @@ This is a hybrid mapping keeping the traditional home positions.  Only the 3x10 
 ~MIRYOKU_MAPPING=TAP~
 
 Corresponds to the tap functions of the Miryoku Base layer with default layout options.  For use with remappable keyboards.
+
+
+*** Kinesis Advantage
+
+~MIRYOKU_MAPPING=KINESIS_ADVANTAGE~
+
+[[https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/mapping/miryoku-kle-mapping-kinesis_advantage.png]]
 
 
 ** Other Options
