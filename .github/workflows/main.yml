@@ -1,4 +1,4 @@
-# Copyright 2021 Manna Harbour
+# Copyright 2022 Manna Harbour
 # https://github.com/manna-harbour/miryoku
 
 name: 'Main'
@@ -47,7 +47,7 @@ jobs:
         custom_config: ${{ fromJSON(inputs.custom_config) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Process inputs
         id: inputs
         run: |
@@ -79,12 +79,12 @@ jobs:
           fi
           cp "$rules" "$config" "$artifacts_dir"
           artifact_build_name=`echo $artifact_build_name | tr ' ' '-'`
-          echo "::set-output name=artifact-dir::$artifacts_dir"
-          echo "::set-output name=artifact-build-name::$artifact_build_name"
-          echo "::set-output name=src::src"
-          echo "::set-output name=build::$build"
-          echo "::set-output name=kmonad-file-pattern::kmonad-*-linux"
-          echo "::set-output name=kmonad-dir::.github/workflows/bin"
+          echo "artifact_dir=$artifacts_dir" >> $GITHUB_OUTPUT
+          echo "artifact_build_name=$artifact_build_name" >> $GITHUB_OUTPUT
+          echo "src=src" >> $GITHUB_OUTPUT
+          echo "build=$build" >> $GITHUB_OUTPUT
+          echo "kmonad_file_pattern=kmonad-*-linux" >> $GITHUB_OUTPUT
+          echo "kmonad_dir=.github/workflows/bin" >> $GITHUB_OUTPUT
       - name: Remove Build
         if: ${{ matrix.mode == 'test' }}
         run: |
@@ -100,7 +100,7 @@ jobs:
           do
             if [ -f "$file" ]
             then
-              cp "$file" "${{ steps.inputs.outputs.artifact-dir }}"
+              cp "$file" "${{ steps.inputs.outputs.artifact_dir }}"
             fi
           done
       - name: Diff
@@ -115,12 +115,12 @@ jobs:
           repository: "kmonad/kmonad"
           # latest: true
           tag: "0.4.1"
-          fileName: "${{ steps.inputs.outputs.kmonad-file-pattern }}"
-          out-file-path: "${{ steps.inputs.outputs.kmonad-dir }}"
+          fileName: "${{ steps.inputs.outputs.kmonad_file_pattern }}"
+          out-file-path: "${{ steps.inputs.outputs.kmonad_dir }}"
       - name: Dry run
         if: ${{ matrix.mode == 'test' }}
         run: |
-          kmonad=`echo ${{ steps.inputs.outputs.kmonad-dir }}/${{ steps.inputs.outputs.kmonad-file-pattern }}`
+          kmonad=`echo ${{ steps.inputs.outputs.kmonad_dir }}/${{ steps.inputs.outputs.kmonad_file_pattern }}`
           chmod u+x "$kmonad"
           for f in "${{ steps.inputs.outputs.build }}"/*.kbd
           do
@@ -128,7 +128,7 @@ jobs:
           done
       - name: Archive Artifacts
         if: ${{ matrix.mode == 'build' }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.inputs.outputs.artifact-build-name }}
-          path: ${{ steps.inputs.outputs.artifact-dir }}
+          name: ${{ steps.inputs.outputs.artifact_build_name }}
+          path: ${{ steps.inputs.outputs.artifact_dir }}
