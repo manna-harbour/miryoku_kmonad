@@ -8,5 +8,5 @@ jobs:
       mode: '["build"]'
       alphas: '["colemak"]'
       clipboard: '["mac"]'
-      mapping: '["noreverseangle"]'
+      mapping: '["custom"]'
       kmonad_os: '["mac"]'
