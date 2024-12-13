@@ -32,45 +32,45 @@ z	x	c	d	v	k	h	,	.	/
 		esc	spc	tab	ent	bspc	del
 )
 (deflayer U_BUTTON
-undo	S-del	C-ins	S-ins	again	again	S-ins	C-ins	S-del	undo
+C-z	C-x	C-c	C-v	C-y	C-y	C-v	C-c	C-x	C-z
 met	alt	ctl	sft	XX	XX	sft	ctl	alt	met
-undo	S-del	C-ins	S-ins	again	again	S-ins	C-ins	S-del	undo
+C-z	C-x	C-c	C-v	C-y	C-y	C-v	C-c	C-x	C-z
 		mmid	mlft	mrgt	mrgt	mlft	mmid
 )
 (deflayer U_NAV
-XX	(tap-dance 200 XX (layer-switch U_TAP))	(tap-dance 200 XX (layer-switch U_EXTRA))	(tap-dance 200 XX (layer-switch U_BASE))	XX	again	S-ins	C-ins	S-del	undo
+XX	(tap-dance 200 (XX (layer-switch U_TAP)))	(tap-dance 200 (XX (layer-switch U_EXTRA)))	(tap-dance 200 (XX (layer-switch U_BASE)))	XX	C-y	C-v	C-c	C-x	C-z
 met	alt	ctl	sft	XX	caps	left	down	up	right
-XX	ralt	(tap-dance 200 XX (layer-switch U_NUM))	(tap-dance 200 XX (layer-switch U_NAV))	XX	ins	home	pgdn	pgup	end
+XX	ralt	(tap-dance 200 (XX (layer-switch U_NUM)))	(tap-dance 200 (XX (layer-switch U_NAV)))	XX	ins	home	pgdn	pgup	end
 		XX	XX	XX	ent	bspc	del
 )
 (deflayer U_MOUSE
-XX	(tap-dance 200 XX (layer-switch U_TAP))	(tap-dance 200 XX (layer-switch U_EXTRA))	(tap-dance 200 XX (layer-switch U_BASE))	XX	again	S-ins	C-ins	S-del	undo
+XX	(tap-dance 200 (XX (layer-switch U_TAP)))	(tap-dance 200 (XX (layer-switch U_EXTRA)))	(tap-dance 200 (XX (layer-switch U_BASE)))	XX	C-y	C-v	C-c	C-x	C-z
 met	alt	ctl	sft	XX	XX	kp4	kp2	kp8	kp6
-XX	ralt	(tap-dance 200 XX (layer-switch U_SYM))	(tap-dance 200 XX (layer-switch U_MOUSE))	XX	XX	XX	XX	XX	XX
+XX	ralt	(tap-dance 200 (XX (layer-switch U_SYM)))	(tap-dance 200 (XX (layer-switch U_MOUSE)))	XX	XX	XX	XX	XX	XX
 		XX	XX	XX	mrgt	mlft	mmid
 )
 (deflayer U_MEDIA
-XX	(tap-dance 200 XX (layer-switch U_TAP))	(tap-dance 200 XX (layer-switch U_EXTRA))	(tap-dance 200 XX (layer-switch U_BASE))	XX	XX	XX	XX	XX	XX
-met	alt	ctl	sft	XX	XX	previoussong	vold	volu	nextsong
-XX	ralt	(tap-dance 200 XX (layer-switch U_FUN))	(tap-dance 200 XX (layer-switch U_MEDIA))	XX	XX	XX	XX	XX	XX
-		XX	XX	XX	stopcd	playpause	mute
+XX	(tap-dance 200 (XX (layer-switch U_TAP)))	(tap-dance 200 (XX (layer-switch U_EXTRA)))	(tap-dance 200 (XX (layer-switch U_BASE)))	XX	XX	XX	XX	XX	XX
+met	alt	ctl	sft	XX	XX	prev	vold	volu	next
+XX	ralt	(tap-dance 200 (XX (layer-switch U_FUN)))	(tap-dance 200 (XX (layer-switch U_MEDIA)))	XX	XX	XX	XX	XX	XX
+		XX	XX	XX	XX	pp	mute
 )
 (deflayer U_NUM
-[	7	8	9	]	XX	(tap-dance 200 XX (layer-switch U_BASE))	(tap-dance 200 XX (layer-switch U_EXTRA))	(tap-dance 200 XX (layer-switch U_TAP))	XX
+[	7	8	9	]	XX	(tap-dance 200 (XX (layer-switch U_BASE)))	(tap-dance 200 (XX (layer-switch U_EXTRA)))	(tap-dance 200 (XX (layer-switch U_TAP)))	XX
 ;	4	5	6	=	XX	sft	ctl	alt	met
-`	1	2	3	\\	XX	(tap-dance 200 XX (layer-switch U_NUM))	(tap-dance 200 XX (layer-switch U_NAV))	ralt	XX
+`	1	2	3	bksl	XX	(tap-dance 200 (XX (layer-switch U_NUM)))	(tap-dance 200 (XX (layer-switch U_NAV)))	ralt	XX
 		.	0	-	XX	XX	XX
 )
 (deflayer U_SYM
-{	&	*	S-0	}	XX	(tap-dance 200 XX (layer-switch U_BASE))	(tap-dance 200 XX (layer-switch U_EXTRA))	(tap-dance 200 XX (layer-switch U_TAP))	XX
-:	$	%	^	+	XX	sft	ctl	alt	met
-~	!	@	#	|	XX	(tap-dance 200 XX (layer-switch U_SYM))	(tap-dance 200 XX (layer-switch U_MOUSE))	ralt	XX
-		S-0	S-9	\_	XX	XX	XX
+S-[	S-7	S-8	S-9	S-]	XX	(tap-dance 200 (XX (layer-switch U_BASE)))	(tap-dance 200 (XX (layer-switch U_EXTRA)))	(tap-dance 200 (XX (layer-switch U_TAP)))	XX
+S-;	S-4	S-5	S-6	+	XX	sft	ctl	alt	met
+S-`	S-1	S-2	S-3	S-\	XX	(tap-dance 200 (XX (layer-switch U_SYM)))	(tap-dance 200 (XX (layer-switch U_MOUSE)))	ralt	XX
+		S-9	S-0	S--	XX	XX	XX
 )
 (deflayer U_FUN
-f12	f7	f8	f9	sysrq	XX	(tap-dance 200 XX (layer-switch U_BASE))	(tap-dance 200 XX (layer-switch U_EXTRA))	(tap-dance 200 XX (layer-switch U_TAP))	XX
+f12	f7	f8	f9	prnt	XX	(tap-dance 200 (XX (layer-switch U_BASE)))	(tap-dance 200 (XX (layer-switch U_EXTRA)))	(tap-dance 200 (XX (layer-switch U_TAP)))	XX
 f11	f4	f5	f6	slck	XX	sft	ctl	alt	met
-f10	f1	f2	f3	pause	XX	(tap-dance 200 XX (layer-switch U_FUN))	(tap-dance 200 XX (layer-switch U_MEDIA))	ralt	XX
+f10	f1	f2	f3	pause	XX	(tap-dance 200 (XX (layer-switch U_FUN)))	(tap-dance 200 (XX (layer-switch U_MEDIA)))	ralt	XX
 		comp	spc	tab	XX	XX	XX
 )
 
