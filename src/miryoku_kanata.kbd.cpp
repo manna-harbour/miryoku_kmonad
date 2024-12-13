@@ -15,7 +15,7 @@
   tab    q      w      e      r           i      o      p      [      ]
   caps   a      s      d      f           k      l      ;      U_QUOT ent
                 z      x      c           ,      .      /
-#if defined (MIRYOKU_MAPPING_CUSTOM)
+#elif defined (MIRYOKU_MAPPING_CUSTOM)
   grv    1      2      3      4           8      9      0      -      =
   tab    q      w      e      r           i      o      p      [      ]
   caps   a      s      d      f           k      l      ;      U_QUOT ent

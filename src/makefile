@@ -13,8 +13,8 @@ build/%.kbd: %.kbd.cpp FORCE
 	  -e "s/U_QUOT/'/g" \
 	  -e 's/U_DQUO/"/g' \
 	  -e 's/U_COMM/,/g' \
-	  -e 's/U_LPRN/\\(/g' \
-	  -e 's/U_RPRN/\\)/g' \
+	  -e 's/U_LPRN/S-0/g' \
+	  -e 's/U_RPRN/S-9/g' \
 	  -e 's/U_PIPE/|/g' \
 	  -e 's/[ ]*U_LF[ ]*/\n/g' \
 	  -e 's/[ ]*U_TAB[ ]*/\t/g' \
@@ -23,7 +23,7 @@ build/%.kbd: %.kbd.cpp FORCE
 FORCE: ;
 
 test: build/miryoku_kanata.kbd
-	kanata -d $<
+	kanata -dc $<
 
 include custom_rules.mk
 
