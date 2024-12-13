@@ -7,7 +7,7 @@
        
 (defcfg
   input (device-file "keyboard")
-  output (uinput-sink "Miryoku KMonad output")
+  output (uinput-sink "Miryoku Kanata output")
   fallthrough false
 )
 (defsrc

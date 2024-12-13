@@ -22,8 +22,8 @@ build/%.kbd: %.kbd.cpp FORCE
 
 FORCE: ;
 
-test: build/miryoku_kmonad.kbd
-	kmonad -d $<
+test: build/miryoku_kanata.kbd
+	kanata -d $<
 
 include custom_rules.mk
 

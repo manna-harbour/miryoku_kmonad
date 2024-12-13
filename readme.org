@@ -1,35 +1,35 @@
 # Copyright 2021 Manna Harbour
 # https://github.com/manna-harbour/miryoku
 
-* Miryoku KMonad [[https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/logos/miryoku-roa-32.png]]
+* Miryoku Kanata [[https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/logos/miryoku-roa-32.png]]
 
-[[https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/cover/miryoku-kle-cover-miryoku_kmonad.png]]
+[[https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/cover/miryoku-kle-cover-miryoku_kanata.png]]
 
-[[https://github.com/manna-harbour/miryoku/][Miryoku]] is an ergonomic, minimal, orthogonal, and universal keyboard layout.  [[https://github.com/manna-harbour/miryoku_kmonad][Miryoku KMonad]] is the Miryoku implementation for [[https://github.com/kmonad/kmonad][KMonad]].
+[[https://github.com/manna-harbour/miryoku/][Miryoku]] is an ergonomic, minimal, orthogonal, and universal keyboard layout.  [[https://github.com/manna-harbour/miryoku_kanata][Miryoku Kanata]] is the Miryoku implementation for [[https://github.com/kanata/kanata][Kanata]].
 
-This document describes Miryoku KMonad only.  For Miryoku documentation, implementations, and discussions and support, see [[https://github.com/manna-harbour/miryoku/][Miryoku]].
+This document describes Miryoku Kanata only.  For Miryoku documentation, implementations, and discussions and support, see [[https://github.com/manna-harbour/miryoku/][Miryoku]].
 
 
 ** Overview
 
-Miryoku KMonad can be used on any keyboard connected to a Linux, Mac, or Windows host.  [[#building][Generate]] a personalised KMonad config file [[#local-builds][locally]], or via GitHub Actions [[#workflow-builds][workflows]] without use of a local build environment and optionally [[#build-inputs-workflow][without]] editing any files.  Then [[#running-kmonad][run]] KMonad with the generated config file.  [[#mapping][Mappings]] for row-staggered keyboards can be selected to map an ortho split layout, with or [[#no-reverse-angle][without]] reverse column angle, or use the [[#lite][lite]] mapping to keep the traditional home positions and add only home row mods and the Nav layer.  The Mouse layer is using [[#mouse-keys][mouse keys]] on the host.  The [[#implementation][implementation]] uses a macro processor to enhance the KMonad config file format, and the makefile can also be [[#use-with-other-keymaps][used]] with other keymaps.
+Miryoku Kanata can be used on any keyboard connected to a Linux, Mac, or Windows host.  [[#building][Generate]] a personalised Kanata config file [[#local-builds][locally]], or via GitHub Actions [[#workflow-builds][workflows]] without use of a local build environment and optionally [[#build-inputs-workflow][without]] editing any files.  Then [[#running-kanata][run]] Kanata with the generated config file.  [[#mapping][Mappings]] for row-staggered keyboards can be selected to map an ortho split layout, with or [[#no-reverse-angle][without]] reverse column angle, or use the [[#lite][lite]] mapping to keep the traditional home positions and add only home row mods and the Nav layer.  The Mouse layer is using [[#mouse-keys][mouse keys]] on the host.  The [[#implementation][implementation]] uses a macro processor to enhance the Kanata config file format, and the makefile can also be [[#use-with-other-keymaps][used]] with other keymaps.
 
 
 ** Building
 
-Generate a personalised KMonad config file.
+Generate a personalised Kanata config file.
 
 
 *** Local Builds
 
 Requires ~make~, ~sh~, ~cpp~, and ~sed~.
 
-First ~cd~ to the [[src]] directory then build with ~make~.  The generated config file is [[src/build/miryoku_kmonad.kbd]].
+First ~cd~ to the [[src]] directory then build with ~make~.  The generated config file is [[src/build/miryoku_kanata.kbd]].
 
 To select [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]], [[#mapping][mapping]], and [[#other-options][other]] options, append them to the ~make~ command line.
 #+BEGIN_SRC sh :tangle no
 make # defaults
-make MIRYOKU_ALPHAS=QWERTY MIRYOKU_EXTRA=COLEMAKDH MIRYOKU_TAP=QWERTY MIRYOKU_NAV=INVERTEDT MIRYOKU_CLIPBOARD=WIN MIRYOKU_LAYERS=FLIP MIRYOKU_MAPPING=LITE MIRYOKU_KMONAD_OS=WIN # custom
+make MIRYOKU_ALPHAS=QWERTY MIRYOKU_EXTRA=COLEMAKDH MIRYOKU_TAP=QWERTY MIRYOKU_NAV=INVERTEDT MIRYOKU_CLIPBOARD=WIN MIRYOKU_LAYERS=FLIP MIRYOKU_MAPPING=LITE MIRYOKU_KANATA_OS=WIN # custom
 #+END_SRC
 
 
@@ -37,7 +37,7 @@ make MIRYOKU_ALPHAS=QWERTY MIRYOKU_EXTRA=COLEMAKDH MIRYOKU_TAP=QWERTY MIRYOKU_NA
 
 A config file can be generated via GitHub Actions workflows without use of a local build environment.
 
-First log in to GitHub, fork the Miryoku KMonad repository, and enable workflows.
+First log in to GitHub, fork the Miryoku Kanata repository, and enable workflows.
 
 To access a workflow, visit the Actions tab and select the workflow.  To download the config file from a workflow run, select the workflow, select the workflow run, select the desired Artifacts, and unzip the downloaded zip file.
 
@@ -54,11 +54,11 @@ Options are specified in the ~with~ section and are of the following form.
 For multiple values per option use the following form, and a matrix build will be performed for each combination of values across all options.
 : option: '["value1","value2"]'
 
-The ~alphas~, ~nav~, ~clipboard~, and ~layers~ options correspond to the [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]] options.  The ~mapping~ option corresponds to the alternative [[#mapping][mapping]] options.  The ~kmonad_os~ option corresponds to the [[#operating-system][operating system]] option.  Options are given in the documentation in the form ~MIRYOKU_OPTION=VALUE~.  To use here, convert to the form specified above.  Use ~default~ to represent the default value.  Values for these six options are case-insensitive.  See the [[.github/workflows/build-all.yml][Build All workflow file]] for all supported values.
+The ~alphas~, ~nav~, ~clipboard~, and ~layers~ options correspond to the [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]] options.  The ~mapping~ option corresponds to the alternative [[#mapping][mapping]] options.  The ~kanata_os~ option corresponds to the [[#operating-system][operating system]] option.  Options are given in the documentation in the form ~MIRYOKU_OPTION=VALUE~.  To use here, convert to the form specified above.  Use ~default~ to represent the default value.  Values for these six options are case-insensitive.  See the [[.github/workflows/build-all.yml][Build All workflow file]] for all supported values.
 
 The ~rules~ and ~config~ options can be used to specify values to be appended to ~custom_rules.mk~ and ~custom_config.h~, respectively.  Separate multiple lines with ~\n~.
 
-The Test workflow is not applicable when using a Build workflow and should be prevented from running on push by deleting the [[https://github.com/manna-harbour/miryoku_kmonad/blob/646d7b3dd903d9a82dc29ff9f1cf45816d30d015/.github/workflows/test.yml#L3][push line in .github/workflows/test.yml]].
+The Test workflow is not applicable when using a Build workflow and should be prevented from running on push by deleting the [[https://github.com/manna-harbour/miryoku_kanata/blob/646d7b3dd903d9a82dc29ff9f1cf45816d30d015/.github/workflows/test.yml#L3][push line in .github/workflows/test.yml]].
 
 
 **** Build Inputs Workflow
@@ -67,25 +67,25 @@ The Build Inputs workflow can be used without editing workflow files.  Select Ru
 
 Options are specified by entering values directly in the corresponding field.  Multiple comma separated values can be entered per option and a matrix build will be performed for each combination of values across all options.
 
-The ~Miryoku Alphas~, ~Miryoku Nav~, ~Miryoku Clipboard~, and ~Miryoku Layers~ options correspond to the [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]] options.  The ~Miryoku Mapping~ option corresponds to the alternative [[#subset-mapping][mapping]] options.  The ~Miryoku KMonad OS~ option corresponds to the [[#operating-system][operating system]] option.  Options are given in the documentation in the form ~MIRYOKU_OPTION=VALUE~.  To use here, enter the ~value~ in the corresponding ~Miryoku Option~ field.  Use ~default~ to represent the default value.  Values for these six options are case-insensitive.
+The ~Miryoku Alphas~, ~Miryoku Nav~, ~Miryoku Clipboard~, and ~Miryoku Layers~ options correspond to the [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#alternative-layouts][alternative layout]] options.  The ~Miryoku Mapping~ option corresponds to the alternative [[#subset-mapping][mapping]] options.  The ~Miryoku Kanata OS~ option corresponds to the [[#operating-system][operating system]] option.  Options are given in the documentation in the form ~MIRYOKU_OPTION=VALUE~.  To use here, enter the ~value~ in the corresponding ~Miryoku Option~ field.  Use ~default~ to represent the default value.  Values for these six options are case-insensitive.
 
 The ~custom_rules.mk~ and ~custom_config.h~ options can be used to specify values to be appended to the corresponding files.  Join multiple lines with ~\n~.
 
 
-** Running KMonad
+** Running Kanata
 
-First [[https://github.com/kmonad/kmonad/blob/master/doc/installation.md][install KMonad]] and [[#building][generate the config file]].
+First [[https://github.com/kanata/kanata/blob/master/doc/installation.md][install Kanata]] and [[#building][generate the config file]].
 
 Note that the current binary release for linux (v0.4.1) does not support specifying the keyboard device on the command line.  If using that release you will need to edit the config file to specify the keyboard device or create a symlink.
 
-From the [[src/build]] directory, run KMonad with the generated config file as follows.
+From the [[src/build]] directory, run Kanata with the generated config file as follows.
 
 #+BEGIN_SRC sh :tangle no
-kmonad miryoku_kmonad.kbd # linux, edited config file or symlink
-kmonad miryoku_kmonad.kbd -i 'device-file "DEVICE"' # linux, keyboard device DEVICE
-kmonad miryoku_kmonad.kbd # mac, all keyboards
-kmonad miryoku_kmonad.kbd -i 'iokit-name "PRODUCT"' # mac, keyboard with product string PRODUCT
-kmonad miryoku_kmonad.kbd # windows
+kanata miryoku_kanata.kbd # linux, edited config file or symlink
+kanata miryoku_kanata.kbd -i 'device-file "DEVICE"' # linux, keyboard device DEVICE
+kanata miryoku_kanata.kbd # mac, all keyboards
+kanata miryoku_kanata.kbd -i 'iokit-name "PRODUCT"' # mac, keyboard with product string PRODUCT
+kanata miryoku_kanata.kbd # windows
 #+END_SRC
 
 
@@ -142,12 +142,12 @@ This is the default.
 
 **** Mac
 
-~MIRYOKU_KMONAD_OS=MAC~
+~MIRYOKU_KANATA_OS=MAC~
 
 
 **** Windows
 
-~MIRYOKU_KMONAD_OS=WIN~
+~MIRYOKU_KANATA_OS=WIN~
 
 
 ** Additional and Experimental Features
@@ -164,7 +164,7 @@ The Mouse layer is using mouse keys on the host.
 
 ** Implementation
 
-The config file source is [[src/miryoku_kmonad.kbd.cpp]].  The generated config file is [[src/build/miryoku_kmonad.kbd]] and is produced by [[src/makefile]].  The C preprocessor (~cpp~) is used to enhance the KMonad config file format, adding includes, conditionals, constants, and functions.  Characters not preserved by ~cpp~ are substituted by ~sed~.
+The config file source is [[src/miryoku_kanata.kbd.cpp]].  The generated config file is [[src/build/miryoku_kanata.kbd]] and is produced by [[src/makefile]].  The C preprocessor (~cpp~) is used to enhance the Kanata config file format, adding includes, conditionals, constants, and functions.  Characters not preserved by ~cpp~ are substituted by ~sed~.
 
 Macros are included from [[src/miryoku.h]].  Layer data is generated by [[https://github.com/manna-harbour/miryoku_babel][Miryoku Babel]] and included from files in [[src/miryoku_babel]].
 

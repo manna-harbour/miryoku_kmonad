@@ -1,18 +1,18 @@
 ;; Copyright 2021 Manna Harbour
-;; github.com/manna-harbour/miryoku
+;; github.com/22ispencer/miryoku_kanata
 
 #include "miryoku.h"
 
 (defcfg
-#if defined (MIRYOKU_KMONAD_OS_WIN)
+#if defined (MIRYOKU_KANATA_OS_WIN)
   input  (low-level-hook)
   output (send-event-sink)
-#elif defined (MIRYOKU_KMONAD_OS_MAC)
-  input  (iokit-name MIRYOKU_KMONAD_KEYBOARD_MAC)
+#elif defined (MIRYOKU_KANATA_OS_MAC)
+  input  (iokit-name MIRYOKU_KANATA_KEYBOARD_MAC)
   output (kext)
 #else
-  input  (device-file MIRYOKU_KMONAD_KEYBOARD_LINUX)
-  output (uinput-sink "Miryoku KMonad output")
+  input  (device-file MIRYOKU_KANATA_KEYBOARD_LINUX)
+  output (uinput-sink "Miryoku Kanata output")
 #endif
 #if defined (MIRYOKU_MAPPING_LITE)
   fallthrough true
