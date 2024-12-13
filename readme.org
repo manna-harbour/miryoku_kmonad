@@ -81,11 +81,9 @@ Note that the current binary release for linux (v0.4.1) does not support specify
 From the [[src/build]] directory, run Kanata with the generated config file as follows.
 
 #+BEGIN_SRC sh :tangle no
-kanata miryoku_kanata.kbd # linux, edited config file or symlink
-kanata miryoku_kanata.kbd -i 'device-file "DEVICE"' # linux, keyboard device DEVICE
-kanata miryoku_kanata.kbd # mac, all keyboards
-kanata miryoku_kanata.kbd -i 'iokit-name "PRODUCT"' # mac, keyboard with product string PRODUCT
-kanata miryoku_kanata.kbd # windows
+kanata -c miryoku_kanata.kbd # linux, edited config file or symlink
+kanata -c miryoku_kanata.kbd # mac, all keyboards
+kanata -c miryoku_kanata.kbd # windows
 #+END_SRC
 
 
